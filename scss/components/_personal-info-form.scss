@@ -1,0 +1,59 @@
+.personal-info-form {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 5.6rem;
+	padding-bottom: 1.6rem;
+	padding-left: 1.6rem;
+
+	@media screen and (max-width: 43.5em) {
+		padding: 1.6rem;
+	}
+
+	@media screen and (max-width: 28em) {
+		padding: 0.8rem;
+	}
+
+	.form {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 1rem;
+
+		@media screen and (max-width: 28em) {
+			padding: 0;
+		}
+
+		&__content {
+			min-width: 32.5rem;
+
+			@media screen and (max-width: 43.5em) {
+				min-width: 0;
+			}
+		}
+
+		&__title-box {
+			margin-bottom: 4rem;
+		}
+
+		.form-input:not(:last-child) {
+			margin-bottom: 2.4rem;
+
+			@media screen and (max-width: 399px) {
+				margin-bottom: 1.6rem;
+			}
+		}
+
+		&__controls {
+			display: flex;
+			justify-content: flex-end;
+
+			@media screen and (max-width: 43.5em) {
+				display: none;
+			}
+		}
+	}
+}

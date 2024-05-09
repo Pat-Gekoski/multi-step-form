@@ -1,29 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/script.js" defer></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Multi-step form</title>
+		<title>Frontend Mentor | Multi-step form</title>
 
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-	<main>
-		<div class="card">
-			asdfasdf
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<img src="/assets/images/bg-sidebar-mobile.svg" alt="Background Image" class="header__bg" />
+			<div class="header__steps-box">
+				<div class="step__indicator active" data-step="1">1</div>
+				<div class="step__indicator" data-step="2">2</div>
+				<div class="step__indicator" data-step="3">3</div>
+				<div class="step__indicator" data-step="4">4</div>
+			</div>
 		</div>
-	</main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Patric Gekoski</a>.
-  </div>
-</body>
+
+		<main class="card">
+			<div class="card__sidebar">
+				<img src="/assets/images/bg-sidebar-desktop.svg" alt="Background Image" class="steps-bg" />
+				<div class="steps__container">
+					<div class="step__item">
+						<div class="step__indicator active" data-step="1">1</div>
+						<div class="step__info">
+							<span class="step__label">Step 1</span>
+							<span class="step__description">Your Info</span>
+						</div>
+					</div>
+					<div class="step__item">
+						<div class="step__indicator" data-step="2">2</div>
+						<div class="step__info">
+							<span class="step__label">Step 2</span>
+							<span class="step__description">Select Plan</span>
+						</div>
+					</div>
+					<div class="step__item">
+						<div class="step__indicator" data-step="3">3</div>
+						<div class="step__info">
+							<span class="step__label">Step 3</span>
+							<span class="step__description">Add-ons</span>
+						</div>
+					</div>
+					<div class="step__item">
+						<div class="step__indicator" data-step="4">4</div>
+						<div class="step__info">
+							<span class="step__label">Step 4</span>
+							<span class="step__description">Summary</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- step 1 -->
+			<form class="personal-info-form form-step">
+				<div class="form">
+					<div class="form__content">
+						<div class="form__title-box">
+							<h1 class="title u-mb-10">Personal info</h1>
+							<p class="sub-title">Please provide your name, email address, and phone number.</p>
+						</div>
+						<div class="form-input">
+							<div class="label-row">
+								<label for="name" class="form-input__label">Name</label>
+							</div>
+							<input type="text" id="name" placeholder="e.g. Stephen King" />
+						</div>
+						<div class="form-input">
+							<div class="label-row">
+								<label for="email" class="form-input__label">Email Address</label>
+							</div>
+							<input type="text" id="email" placeholder="e.g. stephenking@lorem.com" />
+						</div>
+						<div class="form-input">
+							<div class="label-row">
+								<label for="phone" class="form-input__label">Phone Number</label>
+							</div>
+							<input type="text" id="phone" placeholder="e.g. +1 123 567 890" />
+						</div>
+					</div>
+					<div class="form__controls">
+						<button class="button">Next Step</button>
+					</div>
+				</div>
+			</form>
+			<!-- step 2 -->
+		</main>
+
+		<footer class="footer">
+			&nbsp;
+			<a href="#" class="link-button back-button">Go Back</a>
+			<button class="button">Next Step</button>
+		</footer>
+
+		<!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Patric Gekoski</a>.
+    </div> -->
+	</body>
 </html>

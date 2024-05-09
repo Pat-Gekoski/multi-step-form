@@ -1,0 +1,424 @@
+/*
+	0 - 600px: 	 		phone
+	600 - 900px: 		tablet portrait
+	900 - 1200px:		tablet landscape
+	1200 - 1800px: 	normal styles (desktop)
+	1800px: 				large desktop
+
+
+	// another way to do it
+	@mixin respond-phone {
+		@media (max-width: 600px) { @content; }
+	}
+
+	breakpoint arguement choices
+	-phone
+	-tab-port
+	-tab-land
+	-big-desktop
+
+	1em = 16px
+
+	ORDER: base + typography > general layout > grid > page layout > components
+*/
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+  --black: rgba(0, 0, 0, 1);
+}
+
+*,
+*::after,
+*::before {
+  /* properties here are applied, not inherited */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--magnolia);
+  padding: 4rem;
+}
+@media screen and (max-width: 43.5em) {
+  body {
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  color: var(--marine-blue);
+  font-size: 3.2rem;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+}
+@media screen and (max-width: 30em) {
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+.sub-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--cool-gray);
+  line-height: 2.5rem;
+}
+@media screen and (max-width: 30em) {
+  .sub-title {
+    font-size: 1.6rem;
+  }
+}
+
+.u-mb-10 {
+  margin-bottom: 1rem !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.card {
+  display: flex;
+  padding: 1.6rem;
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  box-shadow: 0 2.5rem 2rem rgba(0, 0, 0, 0.09);
+  max-width: 94rem;
+  width: 100%;
+}
+@media screen and (max-width: 43.5em) {
+  .card {
+    margin-top: 26.7vw;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 30em) {
+  .card {
+    width: 90%;
+    border-radius: 1rem;
+  }
+}
+.card__sidebar {
+  position: relative;
+  overflow: hidden;
+  min-width: 21.5rem;
+}
+@media screen and (max-width: 43.5em) {
+  .card__sidebar {
+    display: none;
+  }
+}
+
+.steps__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 4rem 3.2rem;
+}
+
+.step__item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  color: var(--white);
+}
+.step__indicator {
+  height: 3.3rem;
+  width: 3.3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.step__indicator.active {
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
+}
+.step__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.step__label {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: var(--light-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.step__description {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.personal-info-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5.6rem;
+  padding-bottom: 1.6rem;
+  padding-left: 1.6rem;
+}
+@media screen and (max-width: 43.5em) {
+  .personal-info-form {
+    padding: 1.6rem;
+  }
+}
+@media screen and (max-width: 28em) {
+  .personal-info-form {
+    padding: 0.8rem;
+  }
+}
+.personal-info-form .form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 28em) {
+  .personal-info-form .form {
+    padding: 0;
+  }
+}
+.personal-info-form .form__content {
+  min-width: 32.5rem;
+}
+@media screen and (max-width: 43.5em) {
+  .personal-info-form .form__content {
+    min-width: 0;
+  }
+}
+.personal-info-form .form__title-box {
+  margin-bottom: 4rem;
+}
+.personal-info-form .form .form-input:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+@media screen and (max-width: 399px) {
+  .personal-info-form .form .form-input:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+}
+.personal-info-form .form__controls {
+  display: flex;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 43.5em) {
+  .personal-info-form .form__controls {
+    display: none;
+  }
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-input .label-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+}
+.form-input__label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--marine-blue);
+}
+@media screen and (max-width: 28em) {
+  .form-input__label {
+    font-size: 1.2rem;
+  }
+}
+.form-input input {
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  outline: none;
+  border: 1px solid var(--light-gray);
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+}
+.form-input input::placeholder {
+  color: var(--cool-gray);
+}
+@media screen and (max-width: 28em) {
+  .form-input input {
+    height: 4rem;
+  }
+}
+
+.button {
+  height: 4.8rem;
+  width: 12.3rem;
+  outline: none;
+  border: none;
+  background-color: var(--marine-blue);
+  border-radius: 0.8rem;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 28em) {
+  .button {
+    height: 4rem;
+    width: 9.7rem;
+    font-size: 1.4rem;
+  }
+}
+
+.link-button {
+  font-size: 1.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--cool-gray);
+}
+@media screen and (max-width: 28em) {
+  .link-button {
+    font-size: 1.4rem;
+  }
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 12rem) / 3);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 18rem) / 4);
+}
+.row .col-2-of-3 {
+  width: calc(2 * (100% - 2 * 6rem) / 3 + 6rem);
+}
+.row .col-2-of-4 {
+  width: calc((100% - 18rem) / 4 * 2 + (6rem));
+}
+.row .col-3-of-4 {
+  width: calc((100% - 18rem) / 4 * 3 + 2 * 6rem);
+}
+
+.footer {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+  background-color: var(--white);
+}
+@media screen and (max-width: 43.5em) {
+  .footer {
+    display: flex;
+  }
+}
+@media screen and (max-width: 28em) {
+  .footer {
+    height: 7.2rem;
+  }
+}
+
+.header {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.header__bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.header__steps-box {
+  position: relative;
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  z-index: 2;
+  margin-top: 3.2rem;
+  margin-top: 8.53vw;
+  color: var(--white);
+}
+@media screen and (max-width: 43.5em) {
+  .header {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

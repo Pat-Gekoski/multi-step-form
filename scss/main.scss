@@ -1,14 +1,21 @@
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "layout/grid";
-@import "layout/footer";
-@import "layout/header";
+@import 'components/card';
+@import 'components/steps';
+@import 'components/personal-info-form';
+@import 'components/select-plan-form';
+@import 'components/form-input';
+@import 'components/button';
 
-@import "pages/home";
+@import 'layout/grid';
+@import 'layout/footer';
+@import 'layout/header';
+
+@import 'pages/home';

@@ -1,0 +1,26 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.title {
+	color: var(--marine-blue);
+	font-size: 3.2rem;
+	font-weight: 700;
+	font-family: 'Ubuntu', sans-serif;
+
+	@media screen and (max-width: 30em) {
+		font-size: 2.4rem;
+	}
+}
+
+.sub-title {
+	font-size: $default-fontsize;
+	font-weight: 400;
+	font-family: 'Ubuntu', sans-serif;
+	color: var(--cool-gray);
+	line-height: 2.5rem;
+
+	@media screen and (max-width: 30em) {
+		font-size: 1.6rem;
+	}
+}

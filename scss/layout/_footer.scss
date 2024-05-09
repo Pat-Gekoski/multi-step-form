@@ -1,0 +1,16 @@
+.footer {
+	display: none;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.6rem;
+	background-color: var(--white);
+
+	@media screen and (max-width: 43.5em) {
+		display: flex;
+	}
+
+	@media screen and (max-width: 28em) {
+		height: 7.2rem;
+	}
+}

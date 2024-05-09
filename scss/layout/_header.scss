@@ -1,0 +1,28 @@
+.header {
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+
+	&__bg {
+		position: absolute;
+		display: block;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	&__steps-box {
+		position: relative;
+		display: flex;
+		gap: 1.6rem;
+		justify-content: center;
+		z-index: 2;
+		margin-top: 3.2rem;
+		margin-top: 8.53vw;
+		color: var(--white);
+	}
+
+	@media screen and (max-width: 43.5em) {
+		display: block;
+	}
+}

@@ -1,0 +1,29 @@
+.card {
+	display: flex;
+	padding: 1.6rem;
+	background-color: var(--white);
+	border-radius: 1.5rem;
+	box-shadow: 0 2.5rem 2rem rgba(0, 0, 0, 0.09);
+	max-width: 94rem;
+	width: 100%;
+
+	@media screen and (max-width: 43.5em) {
+		margin-top: 26.7vw;
+		width: 80%;
+	}
+
+	@media screen and (max-width: 30em) {
+		width: 90%;
+		border-radius: 1rem;
+	}
+
+	&__sidebar {
+		position: relative;
+		overflow: hidden;
+		min-width: 21.5rem;
+
+		@media screen and (max-width: 43.5em) {
+			display: none;
+		}
+	}
+}
